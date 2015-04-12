@@ -48,6 +48,13 @@ module.exports = function gulpGhPages(options) {
     cb();
 
   }, function publish(cb) {
+    if (options.cname) {
+      var cnameFile = new gutil.File({
+        path: 'CNAME',
+        contents: new Buffer(options.cname)
+      });
+      filePaths.push(cnameFile);
+    }
     if (filePaths.length === 0) {
       gutil.log(TAG, 'No files in the stream.');
       cb();

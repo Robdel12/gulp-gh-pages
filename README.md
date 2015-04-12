@@ -1,3 +1,7 @@
+# This is a fork
+
+The current plugin maintainer doesn't want to add CNAME support. So I forked it, added support, and NPM published :)
+
 # gulp-gh-pages
 
 [![NPM version](http://img.shields.io/npm/v/gulp-gh-pages.svg)](https://www.npmjs.com/package/gulp-gh-pages)
@@ -45,54 +49,62 @@ var ghPages = require('gulp-gh-pages');
 
 ### ghPages([*options*])
 
-*options*: `Object`  
+*options*: `Object`
 Return: `Object` ([stream.Transform](https://nodejs.org/api/stream.html#stream_class_stream_transform_1))
 
 #### options.remoteUrl
 
-Type: `String`  
+Type: `String`
 Default: URL for the remote of the current dir (assumes a git repository)
 
 By default `gulp-gh-pages` assumes the current working directory is a git repository and uses its remote url. If your `gulpfile.js` is not in a git repository, or if you want to push to a different remote url, you can specify it. Ensure you have write access to the repository.
 
 #### options.origin
 
-Type: `String`  
+Type: `String`
 Default: `"origin"`
 
 Git remote.
 
 #### options.branch
 
-Type: `String`  
+Type: `String`
 Default: `"gh-pages"`
 
 The branch where deploy will by done. Change to "master" for `username.github.io` projects.
 
 #### options.cacheDir
 
-Type: `String`  
+Type: `String`
 Default: `.publish`
 
 Set the directory path to keep a cache of the repository. If it doesn't exist, gulp-gh-pages automatically create it.
 
+#### options.cname
+
+Type: `String`
+Optional
+
+Placing CNAME file for [Custom domain](https://help.github.com/articles/adding-a-cname-file-to-your-repository) support.
+
+
 #### options.push
 
-Type: `Boolean`  
+Type: `Boolean`
 Default: `true`
 
 Allow you to make a build on the defined branch without pushing it to master. Useful for dry  run.
 
 #### options.force
 
-Type: `Boolean`  
+Type: `Boolean`
 Default: `false`
 
 Force adding files to the `gh-pages` branch, even if they are ignored by `.gitignore` or `.gitignore_global`.
 
 #### options.message
 
-Type: `String`  
+Type: `String`
 Default: `"Update [timestamp]"`
 
 Edit commit message.
