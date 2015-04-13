@@ -1,6 +1,6 @@
 {
   "name": "gulp-gh-pages-cname",
-  "version": "0.5.0",
+  "version": "0.5.2",
   "description": "gulp plugin to publish contents to Github pages",
   "repository": "shinnn/gulp-gh-pages",
   "licenses": [
@@ -20,32 +20,11 @@
       "url": "https://github.com/shinnn"
     }
   ],
-  "keywords": [
-    "git",
-    "push",
-    "commit",
-    "branch",
-    "deploy",
-    "deployment",
-    "publish",
-    "site",
-    "website",
-    "gulp",
-    "gh-pages",
-    "dist",
-    "github"
-  ],
+  "keywords": [],
   "files": [
     "index.js",
     "lib"
   ],
-  "scripts": {
-    "pretest": "jscs *.js lib/*.js && eslint *.js lib/*.js",
-    "test": "mocha test.js --timeout 10000",
-    "test-appveyor": "mocha test.js --timeout 50000",
-    "coverage": "istanbul cover _mocha test.js -x=test.js -- --timeout 10000",
-    "coveralls": "${npm_package_scripts_coverage} && istanbul-coveralls"
-  },
   "dependencies": {
     "gift": "^0.5.0",
     "gulp-util": "^3.0.4",
